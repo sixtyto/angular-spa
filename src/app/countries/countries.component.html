@@ -1,0 +1,23 @@
+<p>{{ myCountries }}</p>
+<ul>
+  <li *ngFor="let country of countries" class="lpg-list">
+    {{country.name}}: {{country.area}}km<sup>2</sup>
+  </li>
+</ul>
+
+<p>Countries greater than 500 000</p>
+<ul>
+  <li *ngFor="let country of countries">
+    <span *ngIf="country.area > 5000000; then condition1 else condition2">xD</span>
+    <ng-template #condition1>
+      <p class="lead text-success">
+        {{country.name}}: {{country.area}}km<sup>2</sup>
+      </p>
+    </ng-template>
+    <ng-template #condition2>
+      <p class="small text-danger">
+        {{country.name}}: {{country.area}}km<sup>2</sup>
+      </p>
+    </ng-template>
+  </li>
+</ul>

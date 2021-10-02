@@ -1,0 +1,11 @@
+.lpg-list:nth-child(3n) {
+  color: red;
+}
+
+.lpg-list:nth-child(3n + 1) {
+  color: green;
+}
+
+.lpg-list:nth-child(3n + 2) {
+  color: blue;
+}
