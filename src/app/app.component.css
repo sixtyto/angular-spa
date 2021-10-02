@@ -1,0 +1,10 @@
+.main {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-gap: 1rem;
+}
+
+.page-wrapper {
+  display: grid;
+  grid-gap: 1rem;
+}
