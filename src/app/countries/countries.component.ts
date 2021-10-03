@@ -10,6 +10,8 @@ export class CountriesComponent implements OnInit {
 
   myCountries = "My countries"
 
+  randomColor = () => `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+
   countries = [
     new Countries('Poland', 321000),
     new Countries('Russia', 9984670),

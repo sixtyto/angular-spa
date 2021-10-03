@@ -1,11 +1,29 @@
 <p>{{ myCountries }}</p>
 <ul>
-  <li *ngFor="let country of countries" class="lpg-list">
+  <li *ngFor="let country of countries" class="rgb-list">
     {{country.name}}: {{country.area}}km<sup>2</sup>
   </li>
 </ul>
 
-<p>Countries greater than 500 000</p>
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Country</th>
+      <th>Area</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let country of countries; index as i" class="rgb-list">
+      <td>{{i}}</td>
+      <td>{{country.name}}</td>
+      <td>{{country.area}}km<sup>2</sup></td>
+    </tr>
+  </tbody>
+</table>
+
+
+<p>Countries greater than 5 000 000</p>
 <ul>
   <li *ngFor="let country of countries">
     <span *ngIf="country.area > 5000000; then condition1 else condition2">xD</span>
@@ -20,4 +38,13 @@
       </p>
     </ng-template>
   </li>
+</ul>
+
+<h1>Random color</h1>
+<ul class="list-unstyled">
+  <ng-container *ngFor="let country of countries">
+    <li [ngStyle]="{'color': randomColor()}">
+      {{country.name}}: {{country.area}}km<sup>2</sup>
+    </li>
+  </ng-container>
 </ul>
