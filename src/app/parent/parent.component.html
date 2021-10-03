@@ -1,0 +1,8 @@
+<div class="card border-primary">
+  <div class="card-body">
+    <input type="text" class="form-control" [(ngModel)]="messageToChild">
+    <app-child fromParent={{messageToChild}}></app-child>
+  </div>
+</div>
+<p>{{childMessage}}</p>
+<app-child-output (childMessage)="getMessage($event)"></app-child-output>
